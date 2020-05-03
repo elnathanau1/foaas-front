@@ -7,7 +7,6 @@ plugins {
 }
 
 
-
 version "0.1"
 group "ea.sandbox"
 
@@ -45,6 +44,10 @@ dependencies {
 test.classpath += configurations.developmentOnly
 
 mainClassName = "ea.sandbox.Application"
+
+task stage {
+    dependsOn installDist
+}
 
 test {
     useJUnitPlatform()
